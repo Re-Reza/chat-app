@@ -1,0 +1,66 @@
+#writeMessageArea{
+    height:100px;
+    width:89%;
+    /* position:fixed; */
+}
+.chatPage-container{
+    height: 100%;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.chatPage-header{
+    border-bottom: 1px solid #a5a5a5;
+    padding-bottom: 1.1em; 
+    font-family: "Quincho Script PERSONAL USE";
+    font-weight: 700;
+    font-size: 1.5em;
+}
+.sendMessageBtn{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+}
+.send-icon{
+    background-color: #218c74;
+    border-color:#218c74;
+    margin-left: 2em;
+}
+.chatPage-chatSection{
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+.chatPage-chatSection-message-container{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-self: flex-end;
+    align-self: flex-end;
+    margin-right: 7em;
+}
+.message-container{
+    margin-bottom: 2.5em;
+    display:flex;
+    font-family: 'Gourmet Hearth', sans-serif;
+}
+.message{
+    background-color: white;
+    padding: .7em;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 1.3em;
+}
+.message-option-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+#messageForm{
+    display: flex;
+    align-items:flex-end;
+}
+.message-time{
+    font-size:13px;
+    color: #858585;
+}

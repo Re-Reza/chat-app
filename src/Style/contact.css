@@ -1,0 +1,49 @@
+/*------------------contact side bar Content--------------------*/
+.chatSideBar-header{
+    border-bottom:1px #a5a5a5 solid;
+}
+
+.chatSideBar-header-search{
+    display:flex;
+    justify-content:space-between;
+    width: 100%;
+    padding-bottom:1.3em;
+}
+.chatSideBar-mainSection-add{
+    justify-content:flex-end;
+    cursor:pointer;
+    margin-top: .5em;
+}
+.chatSideBar-mainSection-add:hover span{
+    border-bottom:2px #0d6efd solid;
+    transition-duration: .4s;
+}
+/*---------------------contact content--------------------------- */
+#profile-img{
+    width: 50px;
+    border-radius: 50%;
+}
+.contact-container{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom:1px #a5a5a5 solid;
+    padding:1em;
+    margin-bottom: 1em;
+    cursor:pointer;
+    transition-duration:.6s;
+    border-radius: 8px;
+}
+
+.contact-container:hover{
+    background-color: #dddddd;
+    transition-duration:.6s;
+}
+.delete-icon{
+    cursor:pointer;
+    font-size: 1.2em;
+}
+#selected-contact{
+    background-color: #34495e;
+    color: #fff;
+}

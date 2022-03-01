@@ -1,0 +1,52 @@
+*{
+    box-sizing: border-box;
+}
+.addContactFromContainer{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+#addContactFrom{
+    width: 50%;
+    position: absolute;
+    /* border: 2px #34495e solid; */
+    padding:1.5em 3em;
+    border-radius: 8px;
+    font-family: "Crunch Bang Linx";
+    font-weight:400;
+    font-size: 1.2em;
+    right: 48%;
+    background-color:#bdc3c7;
+}
+.input-container{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+#addContactFrom .input-container:nth-child(3){
+    margin-top:1.5em;
+}
+
+#select-part{
+    margin-top: 1.4em;
+}
+#fileInput{
+    /* visibility: hidden; */
+    display: none;
+}
+#inputFileStatus{
+    overflow-x:auto;
+}
+.exit-icon{
+    color:red;
+    position: relative;
+    top: -18px;
+    left: 57%;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+.add-icon:hover{
+    border-bottom: 2px #0d6efd solid;
+    padding-bottom:.5em
+}
