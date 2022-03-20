@@ -1,9 +1,10 @@
 import React, {useReducer} from 'react';
 import "bootstrap/dist/css/bootstrap.css";
+import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 
 //import Components
-import HeadPart from './HeadPart.js';
 import MainSection from "./MainSection"
+import AddContact from "./AddContactForm";
 
 //import Reducers
 import AppReducer from '../Reducers/AppReducer.js';
@@ -29,8 +30,12 @@ function App() {
     <div className="App">
       <UsersContext.Provider value={{users, dispatch}}>
 
-          <HeadPart/>
-          <MainSection/>  
+        <Router>
+          <Routes>
+            <Route path="/" element={<AddContact/>} />
+          </Routes>
+        </Router>
+
           
       </UsersContext.Provider>    
   
