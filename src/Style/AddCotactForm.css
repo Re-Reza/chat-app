@@ -6,8 +6,8 @@
     width: 100%;
     height: 100%;
 }
-#addContactFrom{
-    width: 50%;
+.addContactFrom{
+    width: 100%;
     position: absolute;
     /* border: 2px #34495e solid; */
     padding:1.5em 3em;
@@ -15,8 +15,9 @@
     font-family: "Crunch Bang Linx";
     font-weight:400;
     font-size: 1.2em;
-    right: 48%;
+    right: -7%;
     background-color:#bdc3c7;
+    z-index: 3;
 }
 .input-container{
     display: flex;
@@ -49,4 +50,9 @@
 .add-icon:hover{
     border-bottom: 2px #0d6efd solid;
     padding-bottom:.5em
+}
+.addContactForm-loaderContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

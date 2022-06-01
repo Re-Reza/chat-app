@@ -1,0 +1,71 @@
+.register{
+    cursor:pointer;
+    transition-duration: .4s;
+}
+*{
+    box-sizing: border-box;
+}
+.register:hover{
+    /*solve below problem*/
+    color: #e67e22 !important;
+    border-bottom: 2px solid #e67e22;
+    transition-duration:.4s;
+}
+.main-container{
+    width: 30%;
+    text-align: center;
+    display: flex;
+    /* height: 80%; */
+    height: 600px;
+    flex-direction:column;
+    padding: 2.8em 2em 2.8em 2em;
+    justify-content: space-between;
+    background-color: #fff;
+    border-radius: 8px;
+    /* box-shadow: ; */
+}
+.main{
+    /* height: 700px; */
+    height: 100vh;
+    background: linear-gradient(to right, #BDFFF3, #4AC29A); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+}
+#loginForm{
+    /* display: flex; */
+    /* flex-direction:column; */
+    /* justify-content: space-between; */
+    height: 200px;
+}
+#loginForm div{
+    margin-top: 1.3em;
+}
+.submitBtn{
+    background-color: #9b59b6;
+    padding: .5em 1em;
+    color: #fff;
+}
+.show-password{
+    cursor: pointer;
+}
+.loader-container{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+/*-------------------------responsive-----------------------*/
+@media only screen and (max-width:1200px)
+{
+    .main-container{
+        width:40%
+    }
+}
+@media only screen and (max-width:870px){
+    .main-container{
+        width: 60%;
+    }
+}
+@media only screen and (max-width:450px){
+    .main-container{
+        width: 80%;
+    }
+}

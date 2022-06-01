@@ -1,21 +1,25 @@
 .mainSection-container{
+    width: 100%;
     padding: 1em 2.5em;
     background-color: #f5f2f2;
     display: flex;
     height: 600px;
-    position:relative;
-                                                
+    position:relative;                          
 }
 #mainSection-sidebar{
     width:30%;
-    /* border-right-width: 2px;
-    border-right-color:#e5e5e5;
-    border-right-style: solid; */
+    overflow-y: auto;
     border-right: 2px #a5a5a5 solid;
     display:flex;
     justify-content:center;
     font-family: 'Beagle Brigade AU', sans-serif;
-                font-weight: 500;                               
+    font-weight: 500;  
+    padding:24px;   
+    /*-ms-overflow-style: none;*/ /* for internet explorer */                          
+    /*scrollbar-width: none;*/ /* for firefox */ 
+}
+#mainSection-sidebar::-webkit-scrollbar{
+    /* display: none; */
 }
 #mainSection-chatPart{
     width: 70%;
@@ -31,4 +35,95 @@
     align-items: center;
     height:100%;
     font-family: 'Dies Irae Saloon', sans-serif;
+}
+.addContact{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.addContact span{
+    border-bottom: 1px solid rgba(var(--bs-primary-rgb), var(--bs-text-opacity)) !important;
+    padding-bottom:.3em;
+    cursor:pointer;
+}
+.returnContactListIcon{
+    display:none;
+    font-size:1.6em;
+    color:#0d6efd;
+    cursor: pointer;
+}
+.addContactMobile{
+    width: 80%;
+    position:absolute;
+    display:none;
+    right: 16%;
+}
+.addContactDesktop{
+    width: 50%;
+}
+/*-----------------------------responsive part----------------------------*/
+@media (max-width: 850px) {
+    .sideBar{
+        font-size: 13px;
+    }
+    #mainSection-chatPart{
+        font-size: 14px;
+    }
+    #mainSection-sidebar{
+        padding-left: 0;
+        padding-right: 16px;
+    }
+    .addContactDesktop{
+        width: 70%;
+    }
+}
+@media(max-width: 680px) {
+    #mainSection-sidebar{
+        border: none;
+        width:100%;
+        padding:0;
+    }
+    #mainSection-chatPart{
+        width:100%;
+        display:none;
+    }
+    .chatPage-container{
+        width: 100%;
+    }
+    .returnContactListIcon{
+        display:block;
+    }
+    .addContactMobile{
+        display:block;
+    }
+    .addContactDesktop{
+        display:none;
+    }
+    .exit-icon{
+        left: 104% !important;
+    }
+}
+@media (max-width:540px){
+    .mainSection-container{
+        padding:1em 1.8em;
+    }
+    .addContactMobile{
+        font-size: 13px;
+    }
+}
+/*حالت 540 پیکسل هم برای زمانی که 426 پیکسل است برقرار است اما چون 426 بعد تر نوشته شده بر 540 پیسکل برتری دارد استایل ان برای یک المنت مشابه در 540 و426 */
+@media (max-width:426px){
+    #mainSection-chatPart{
+        font-size: 12px;
+    }
+    .mainSection-container{
+        padding:1em 1.4em;
+    }
+}
+.show{
+    display:flex !important;
+}
+.hide{
+    display:none !important;
 }

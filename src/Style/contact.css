@@ -1,8 +1,23 @@
 /*------------------contact side bar Content--------------------*/
-.chatSideBar-header{
-    border-bottom:1px #a5a5a5 solid;
-}
 
+.chatSideBar-header{
+    display: flex;
+    justify-content: space-around;
+    justify-content:center;
+    border-bottom: 2px #a5a5a5 solid;
+    padding-bottom:1em;
+}
+.chatSideBar-header-btn{
+    border: none;
+    width: 48%;
+    padding: .3em .8em;
+    background-color: rgb(230, 230, 230);
+    transition-duration: .3s;
+}
+.chatSideBar-header-btn:hover{
+    transform: scale(1.1);
+    transition-duration:.3s;
+}
 .chatSideBar-header-search{
     display:flex;
     justify-content:space-between;
@@ -18,15 +33,27 @@
     border-bottom:2px #0d6efd solid;
     transition-duration: .4s;
 }
+.active{
+    background-color: #3498db;
+    color: #fff;
+}
+.add-icon{
+    font-size: 1.1em;
+}
+/*-----------------------responsive-------------------------*/
+
+
+
+
 /*---------------------contact content--------------------------- */
 #profile-img{
     width: 50px;
     border-radius: 50%;
 }
 .contact-container{
+    width: 100%;
     display:flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
     border-bottom:1px #a5a5a5 solid;
     padding:1em;
     margin-bottom: 1em;
@@ -34,10 +61,19 @@
     transition-duration:.6s;
     border-radius: 8px;
 }
-
+.contact-container-row1{
+    display: flex;
+    justify-content: space-between;
+}
 .contact-container:hover{
     background-color: #dddddd;
     transition-duration:.6s;
+}
+.recentMessage-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 3px;
 }
 .delete-icon{
     cursor:pointer;
@@ -46,4 +82,10 @@
 #selected-contact{
     background-color: #34495e;
     color: #fff;
+}
+.see-message{
+    font-size: 2em;
+    color: #3498db;
+    margin:0 0 1em .2em;
+    cursor: pointer;
 }

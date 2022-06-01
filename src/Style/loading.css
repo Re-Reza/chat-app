@@ -1,0 +1,22 @@
+.loading{
+    width:40px;
+    margin-top: 0 !important;
+    margin-left: 2.5em;
+    height: 40px;
+    border: 8px solid #f3f3f3;
+    border-bottom: 8px solid blue;
+    border-top: 8px solid red;
+    /* border-right: 16px solid green; */
+    /* border-left: 16px solid yellow; */
+    border-radius: 50%;
+    animation: rotateLoader .8s ease-in-out infinite;
+}
+
+@keyframes rotateLoader{
+    0%{
+       transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}

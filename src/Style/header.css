@@ -3,18 +3,59 @@
 .header-mainContainer{
     box-shadow: 0px 0px 10px rgba(54, 53, 53, 0.4);
     padding: 1em 1.5em;
-    font-family: "Heroyn Cittabhumi";
     z-index:3;
 }
 *{
     font-family:inherit; 
 }
-.test-text{
+.wellcome-text{
     color: rgb(105, 102, 102);
     font-family: "denalova";
     font-weight: 700;
     font-size: 2em;
 }
-.timeShow{
-    width: 10%;
+.date-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: "Heroyn Cittabhumi";
+    font-size: 1.6em;
+}
+.account-container{                                                      
+    font-family: 'Progress', sans-serif;
+    font-size: 1.3em;
+}
+.logOutIcon:hover{
+    cursor: pointer;
+    transform: rotate(360deg);
+    transition: transform .5s
+}
+.logOutIcon{
+    transition-duration: .5s;
+}
+.logOut-Mobile{
+    display: none
+}
+
+@media only screen and (max-width: 970px){
+    .header-mainContainer{
+        font-size: 12px;
+        
+    }
+}
+
+@media only screen and (max-width:650px){
+    .header-mainContainer{
+        flex-direction: column;
+    }
+    .logOut-Mobile{
+        display:block;
+    }
+    .logOut-Desktop{
+        display:none;
+    }
+    .wellcome-text{
+        border-bottom: 2px solid #a5a5a5;
+        padding-bottom:.5em;
+    }
 }
