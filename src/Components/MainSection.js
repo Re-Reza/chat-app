@@ -26,7 +26,6 @@ class MainSection extends Component {
         showForm:false,
         username:"",
         currentUserId:"",
-        // contacts:[ {username:"",contactId:"" ,id:"", selected:false ,chats:[] } ],
         contacts:[],
         loadingChatPage:true,
     };
@@ -40,7 +39,6 @@ class MainSection extends Component {
     }
 
     componentDidMount(){
-        console.log(`https://chat-app-373ad-default-rtdb.firebaseio.com/users/${this.props.params.singedInId}.json`);
         axios.get(`https://chat-app-373ad-default-rtdb.firebaseio.com/users/${this.props.params.singedInId}.json`)
         .then((response)=>{ 
             const contacts = response.data.contacts
@@ -60,7 +58,6 @@ class MainSection extends Component {
                                 contactId:item[1].contactId,
                                 chats: item[1].chats != undefined ? 
                                 Object.entries(item[1].chats).map((item)=>{
-                                    console.log(item)
                                     return{
                                         text:item[1].text,          
                                         chatId:item[0],
@@ -76,7 +73,6 @@ class MainSection extends Component {
                 
             });
             promise.then(()=>{
-                console.log("in resolve")
                 this.setState({
                     loadingChatPage:false
                 });
@@ -95,14 +91,12 @@ class MainSection extends Component {
     }
 
     deleteContact(contactId, isSelected, index){
-        console.log(contactId, isSelected);
 
         //to check if selected item is going to remove
         if(isSelected && this.state.contacts.length>1)
         {
             this.setState((previousState)=>{
                 const itemIndex = (index+1)%this.state.contacts.length;
-                console.log(itemIndex);
                 let foundItem = previousState.contacts[itemIndex];
                 foundItem.selected = true
                 return{
@@ -126,16 +120,11 @@ class MainSection extends Component {
     }
 
     toggleUserSelect(contactId){
-        console.log("in toggle");
-        console.log(contactId);
         this.setState((previousState)=>{
-            console.log("in setState");
             let foundItem = previousState.contacts.find((item)=>{
-                console.log("here");
                 if(item.id == contactId)
                     return item; 
             });
-            console.log(foundItem);
             //doesn't work by temp assignment
             // let temp = foundItem.selected?false:true;
             foundItem.selected = true;
@@ -157,7 +146,6 @@ class MainSection extends Component {
                     item.chats.push(messageObj)
                     const set = new Set(item.chats);
                     item.chats = [...set] 
-                    console.log(item.chats); 
                 }
             });
 
@@ -171,7 +159,6 @@ class MainSection extends Component {
     {
         this.setState((previousState)=>{
             const foundItem = previousState.contacts.find(item=>item.id==contactId)
-            console.log(foundItem.chats)
             foundItem.chats = foundItem.chats.filter(item=>item.chatId != idOfChat)
             return{
                 ...previousState
@@ -181,7 +168,6 @@ class MainSection extends Component {
 
     render() {
         const {users} = this.context;
-        console.log(this.props.params.singedInId);
         return(
             
             <FormShowContext.Provider value={{

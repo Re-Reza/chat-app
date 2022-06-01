@@ -46,18 +46,15 @@ function ChatPage(props) {
             let chatId;
             axios.post(`https://chat-app-373ad-default-rtdb.firebaseio.com/users/${currentUserId}/contacts/${id}/chats.json`, data)
             .then(response=>{
-                console.log(response);
                 chatId = response.data.name;
                 setLoading(false);           
                 axios.get(`https://chat-app-373ad-default-rtdb.firebaseio.com/users/${contactId}/contacts.json`)
                 .then(response=>{
-                    console.log(response.data)
                     const searchResult = isContactExist(response.data, username);
                     if(searchResult != undefined)
                     {
                         axios.post(`https://chat-app-373ad-default-rtdb.firebaseio.com/users/${contactId}/contacts/${searchResult[0]}/chats.json`, {...data, sent:false})
                         .then(response=>{
-                            console.log(response);
                             deleteTextArea();
                         }).catch(error=>console.log(error))
                     }
@@ -66,11 +63,9 @@ function ChatPage(props) {
                             username: username,
                             contactId:currentUserId,
                             chats:[{...data, sent:false,}]
-                            //status of message must be changed
                         }
                         axios.post(`https://chat-app-373ad-default-rtdb.firebaseio.com/users/${contactId}/contacts.json`, newContact)
                         .then(response=>{
-                            console.log(response);
                             deleteTextArea();
                         }).catch(error=>{
                             console.log(error);
@@ -78,18 +73,11 @@ function ChatPage(props) {
                     }
                 });
                 data={...data, chatId}
-                console.log(data);
                 context1.addMessage(data, id);
-                // const audio = new Audio("message_sent_1_wav_lr8ezxq5 (1).mp3");
-                // console.log(audio);
                 const audio = document.getElementById("test");
                 audio.play();
                 
             }).catch(err=>console.log(err))
-            // setMessage({
-            //     text:"",
-            //     time:""
-            // });
         }
     }
     function deleteTextArea(){

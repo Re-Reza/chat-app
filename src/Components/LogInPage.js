@@ -6,6 +6,7 @@ import "bootstrap/dist/css/bootstrap.css"
 import "../Style/loginPage.css";
 import Loading from "./Loading.js";
 import Navigation from "./Navigation";
+import MAIN_URL from "./MainUrl";
 
 class LogInPage extends React.Component 
 {
@@ -38,7 +39,6 @@ class LogInPage extends React.Component
             })
             if(this.state.register) //if user wants to register
             {
-                //بررسی تکراری بودن یوزر انجام شود
                 const newUser = {
                     username:this.state.username,
                     password:this.state.password
@@ -65,13 +65,10 @@ class LogInPage extends React.Component
         this.setState({
             passwordWarning:passWarn,
             usernameWarning:usernameWarn,
-            // password:"",
-            // username:""
         });
     }
 
     check(data){
-        console.log(Object.entries(data))
         let foundItem = Object.entries(data).find(item=>{
             if(item[1].username == this.state.username)
             {
@@ -86,7 +83,7 @@ class LogInPage extends React.Component
             const commandAfterCheckingPassWord = foundItem[1].password != this.state.password ? 
             alert("password is incorrect"):
             this.setState({
-                logInUser:"/"+foundItem[0],
+                logInUser:MAIN_URL+"/"+foundItem[0],
                 navigate:true
             });
             // window.location.assign(`/${foundItem[0]}`);

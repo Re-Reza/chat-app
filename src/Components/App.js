@@ -16,6 +16,8 @@ import AppReducer from '../Reducers/AppReducer.js';
 //Context
 import UsersContext from "../Contexts/AppContext";
 
+import MAIN_URL from './MainUrl';
+
 function App() {
 
   const [userState, dispatch] = useReducer(AppReducer,{
@@ -23,12 +25,6 @@ function App() {
     }
   )
   let {users} = userState;
-
-  console.log(users);
-
-  // React.useEffect(()=>{
-  //   dispatch();
-  // },[])
 
   return (
     <div className="App">
@@ -38,9 +34,9 @@ function App() {
         <Router>
 
           <Routes>
-            <Route path="" element={<LogInPage/>} />
-            <Route path="/:singedInId" element={<SendParamsToMainSection/>} />
-            <Route path="/404" element={<NotFoundPage/>} />
+            <Route path={MAIN_URL} element={<LogInPage/>} />
+            <Route path={MAIN_URL+"/:singedInId"} element={<SendParamsToMainSection/>} />
+            <Route path={MAIN_URL+"/404"} element={<NotFoundPage/>} />
             <Route path="*" element= {<NotFoundPage/>} />
           </Routes>
 

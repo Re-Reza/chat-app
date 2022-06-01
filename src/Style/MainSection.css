@@ -18,14 +18,9 @@
     /*-ms-overflow-style: none;*/ /* for internet explorer */                          
     /*scrollbar-width: none;*/ /* for firefox */ 
 }
-#mainSection-sidebar::-webkit-scrollbar{
-    /* display: none; */
-}
 #mainSection-chatPart{
     width: 70%;
     padding:0 0 0 1.5em;
-    /* display:flex; */
-    /* justify-content:center; */
     text-align: center;
 }
 .no-contact-warning{

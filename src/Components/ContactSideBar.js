@@ -19,7 +19,6 @@ function ContactSideBar(){
 
 
     function showContacts(){
-        console.log(showFromContext)
         setContactState(true)
     }
 

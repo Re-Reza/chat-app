@@ -29,10 +29,7 @@ function Contacts(props)
     }
 
     function selectContact(){
-        console.log(props.contact);
-        console.log(userId);
         const {id} = props.contact;
-        console.log(id)
         context1.toggleUserSelect(id);
     }
     const chatPart = document.getElementById("mainSection-chatPart");
@@ -54,8 +51,6 @@ function Contacts(props)
     }, []);
 
     function ShowChat(){
-        console.log(chatPart);
-        console.log(sideBar);
         chatPart.classList = "show";
         sideBar.classList = "hide";
     }

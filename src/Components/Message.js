@@ -13,18 +13,16 @@ function Message(props)
     const context1 = useContext(FormShowContext);
 
     function deleteMessage(){
-        console.log(`https://chat-app-373ad-default-rtdb.firebaseio.com/users/${context1.userFullInfo.currentUserId}/contacts/${props.selectedContact.id}/chats/${props.message.chatId}`);
         axios.delete(`https://chat-app-373ad-default-rtdb.firebaseio.com/users/${context1.userFullInfo.currentUserId}/contacts/${props.selectedContact.id}/chats/${props.message.chatId}.json`)
         .then(response=>{
-            console.log(response);
             context1.deleteMessage(props.selectedContact.id, props.message.chatId);
             
         }).catch(error=>console.log(error));
         context1.deleteMessage(props.selectedContact.id, props.message.chatId);
     }
-    useEffect(()=>{
-        return ()=>console.log("message deleted")
-    },[])
+    // useEffect(()=>{
+    //     return ()=>console.log("message deleted")
+    // },[])
 
     return(
         <div className={sent?"message-container":"message-container message-container-received"}>

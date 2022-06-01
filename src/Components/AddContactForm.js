@@ -49,13 +49,10 @@ class AddContact extends Component {
         this.setState({
             imgUrl : url
         });
-        console.log(url);
     }
 
-    //last parameter is event as default
     addUserCall( nameInputWarning, event){
         event.preventDefault();
-        //try to optimize
         if(nameInputWarning==false)
         {   
             this.setState({
@@ -71,19 +68,15 @@ class AddContact extends Component {
                 if(contact != undefined)
                 {
                     const {username} = contact[1];
-                    console.log(username);
                     axios.post(`https://chat-app-373ad-default-rtdb.firebaseio.com/users/${this.context.id}/contacts.json`, {username, contactId:contact[0] ,chats:[] })
                     .then(response=>{
-                        console.log(response.data);
                         const selected = this.context.contacts.length==0 ? true : false;  
                         this.context.setContacts({username:username, contactId:contact[0] ,id:response.data.name, selected , chats:[] })
                     })
                     .catch(err=>console.log(err))
                     document.querySelector(".form-warning").textContent="";
-                    console.log("test")
                 }
                 else{
-                    console.log(document.querySelectorAll(".form-warning"))
                     document.querySelectorAll(".form-warning").forEach((item)=>item.textContent="Entered username doesn't exist or it isn't valid!")
                 }
                 
@@ -108,7 +101,6 @@ class AddContact extends Component {
     }
 
     render() {
-        // console.log(this.props)
         const phoneNumberWarning = this.state.phoneNumberInput == "" ? true : false;
         const nameInputWarning = this.state.nameInput == "" ? true : false;
         
