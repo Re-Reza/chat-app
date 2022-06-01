@@ -5,6 +5,7 @@ import { AiOutlineLogout } from "react-icons/ai";
 import AddContact from "./AddContactForm.js";
 import FormShowContext from "../Contexts/FormShowContext";
 import Navigation from './Navigation.js';
+import MAIN_URL from "./MainUrl";
 
 // import "../Style/fonts/Ballines/font-face.css";
 import "../Style/header.css";
@@ -59,7 +60,7 @@ class HeadPart extends Component{
                 <div className="account-container d-flex align-items-center justify-content-center">
                     <div className="me-3">username: {this.context.username}</div>
                     <AiOutlineLogout onClick={()=>{this.setState({navigate:true})}} className="text-danger logOut-Desktop fs-3 logOutIcon" title="Logout"/>
-                    {this.state.navigate?<Navigation navigation="/"/>:<></>}
+                    {this.state.navigate?<Navigation navigation={MAIN_URL}/>:<></>}
                 </div>
                 
             </div>

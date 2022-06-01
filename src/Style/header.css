@@ -58,4 +58,7 @@
         border-bottom: 2px solid #a5a5a5;
         padding-bottom:.5em;
     }
+    .date-container{
+        margin-top: 1.3em;
+    }
 }
