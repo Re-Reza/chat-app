@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
 *{
     box-sizing: border-box;
 }
@@ -12,7 +13,7 @@
     /* border: 2px #34495e solid; */
     padding:1.5em 3em;
     border-radius: 8px;
-    font-family: "Crunch Bang Linx";
+    font-family: 'Roboto', sans-serif;   
     font-weight:400;
     font-size: 1.2em;
     right: -7%;
